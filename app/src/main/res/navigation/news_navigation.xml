@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/news_navigation"
+    app:startDestination="@id/splashFragment">
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.iptnews.view.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/actionListNews"
+            app:destination="@id/fragmentListNews" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentListNews"
+        android:name="com.example.iptnews.view.fragmentListNews"
+        android:label="fragment_list_news"
+        tools:layout="@layout/fragment_list_news" >
+        <action
+            android:id="@+id/actionDetailsNews"
+            app:destination="@id/fragmentDetailsNews2" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentDetailsNews2"
+        android:name="com.example.iptnews.view.fragmentDetailsNews"
+        android:label="fragmentDetailsNews" >
+        <action
+            android:id="@+id/actionReturnNews"
+            app:destination="@id/fragmentListNews" />
+        <argument
+            android:name="detalhes"
+            app:argType="integer" />
+    </fragment>
+</navigation>
