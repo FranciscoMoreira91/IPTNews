@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">IPTNews</string>
     <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">IPTNews</string>
+    <string name="open">IPTNews</string>
+    <string name="close">IPTNews</string>
 
 </resources>
