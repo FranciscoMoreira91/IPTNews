@@ -1,77 +1,103 @@
 package com.example.iptnews.view
 
-
-import android.content.Intent
-import android.os.Build
-import android.text.Html
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat.startActivity
-import androidx.fragment.app.ListFragment
-import androidx.navigation.Navigation
-import androidx.navigation.fragment.NavHostFragment
+import android.widget.Filter
+import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.iptnews.R
-import com.example.iptnews.view.model.Noticias
-import kotlinx.android.synthetic.main.fragment_details_news.view.*
-import kotlinx.android.synthetic.main.newsitem.view.*
-import kotlinx.android.synthetic.main.newsitem.view.listTitle
-import kotlin.math.log
-
-class ItemsAdapter (val newsList: ArrayList<Noticias>):RecyclerView.Adapter<ItemsAdapter.NewsViewHolder>() {
+import com.example.iptnews.view.ItemsAdapter.ItemsAdapterVH
+import kotlinx.android.synthetic.main.fragment_list_news.view.*
+import java.util.*
+import kotlin.collections.ArrayList
 
 
-    fun updateNewsList(newNoticiaList: List<Noticias>) {
+class ItemsAdapter
+    (var clickListener: ClickListener)
+    : RecyclerView.Adapter<ItemsAdapterVH>(), Filterable {
 
-        newsList.clear()
+    var itemsModalList = ArrayList<Noticias>()
+    var itemsFilter = ArrayList<Noticias>()
+    var items = ArrayList<Noticias>()
 
-        newsList.addAll(newNoticiaList)
-
-        //Notifies the attached observers that the
-        //underlying data has been changed and any View reflecting the data set should refresh itself
-        notifyDataSetChanged()
+    fun setData(itemsModalList : ArrayList<Noticias>){
+        this.itemsModalList = itemsModalList
     }
 
 
-    class NewsViewHolder (var view: View) : RecyclerView.ViewHolder(view)
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
-        val inflater = LayoutInflater.from(parent.context)
-        val view = inflater.inflate(R.layout.newsitem, parent, false)
-        return NewsViewHolder(view)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemsAdapterVH {
+        return ItemsAdapterVH(LayoutInflater.from(parent.context).inflate(R.layout.fragment_list_news,parent,false))
     }
 
-    override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ItemsAdapterVH, position: Int) {
+        val itemsModal = itemsModalList[position]
+        holder.titulo.text = itemsModal.titulo
+        holder.autor.text = itemsModal.autor
+        holder.desc.text = itemsModal.descr
+        holder.image.setImageResource(itemsModal.imagem)
+        holder.DataP.text = itemsModal.DataP
 
-        holder.view.listTitle.text = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            Html.fromHtml(newsList[position].title, Html.FROM_HTML_MODE_COMPACT)
-        } else {
-            Html.fromHtml(newsList[position].title)
+        holder.itemView.setOnClickListener{
+            clickListener.ClickedItem(itemsModal)
         }
+    }
 
-        holder.view.listDesc.text = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            Html.fromHtml(newsList[position].description, Html.FROM_HTML_MODE_COMPACT)
-        } else {
-            Html.fromHtml(newsList[position].description)
-        }
+    override fun getItemCount(): Int {
+        return itemsModalList.size
+    }
 
-        holder.view.listAuthor.text = newsList[position].author
-        holder.view.listPubDate.text = newsList[position].pubDate
-        Glide.with(holder.view.context)
-            .load(newsList[position].enclosure?.link)
-            .into(holder.view.listUrl)
-
-        holder.view.setOnClickListener{
-            Navigation.findNavController(it).navigate(LatestFragmentDirections.actionLatestDetails(newsList[position]))
-        }
+    class ItemsAdapterVH(itemView: View) : RecyclerView.ViewHolder(itemView){
+        val titulo = itemView.Titulo
+        val autor = itemView.Autor
+        val desc = itemView.Descricao
+        val image = itemView.image
+        val DataP = itemView.DataP
 
     }
 
-    override fun getItemCount() = newsList.size
+    interface ClickListener{
+        fun ClickedItem(itemsModal : Noticias)
+    }
+
+    override fun getFilter(): Filter {
+        return object:Filter(){
+            override fun performFiltering(charSequence: CharSequence?): FilterResults {
+
+                val filterResults = FilterResults();
+                if (charSequence == null || charSequence.length < 0){
+                    filterResults.count = itemsFilter.size
+                    filterResults.values = itemsFilter
+                }else{
+
+                    var searchChr = charSequence.toString().lowercase(Locale.getDefault())
+
+                    val itemModal = ArrayList<Noticias>()
+
+                    for (items in itemsFilter){
+                        if (items.titulo.contains(searchChr) || items.descr.contains(searchChr))
+                            itemModal.add(items)
+                    }
+
+
+                    filterResults.count = items.size
+                    filterResults.values = items
+
+
+                }
+
+                return filterResults
+
+            }
+
+
+            override fun publishResults(p0: CharSequence?, filterResults: FilterResults?) {
+                itemsFilter = filterResults!!.values as ArrayList<Noticias>
+                notifyDataSetChanged()
+            }
+
+        }
+    }
 
 
 }
-
