@@ -4,6 +4,9 @@ package com.example.iptnews.view
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.ListFragment
+import androidx.navigation.Navigation
+import androidx.navigation.compose.NavHost
 import androidx.recyclerview.widget.RecyclerView
 import com.example.iptnews.R
 import com.example.iptnews.view.model.Noticias
@@ -34,9 +37,14 @@ class ItemsAdapter (val newList: ArrayList<Noticias>):RecyclerView.Adapter<Items
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
 
         holder.view.Titulo.text = newList[position].titulo
+        holder.view.setOnClickListener{
+            Navigation.findNavController(it).navigate(fragmentListNewsDirections.actionDetailsNews())
+        }
+
     }
 
     override fun getItemCount() = newList.size
+
 
 }
 
