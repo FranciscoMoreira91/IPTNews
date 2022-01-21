@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/morei/AndroidStudioProjects/IPTNews2/app/src/main/res/drawable/ic_home_background.xml" value="0.2846153846153846" />
+        <entry key="..\:/Users/morei/AndroidStudioProjects/IPTNews2/app/src/main/res/drawable/ic_home_foreground.xml" value="0.2846153846153846" />
         <entry key="..\:/Users/morei/AndroidStudioProjects/IPTNews2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1265625" />
         <entry key="..\:/Users/morei/AndroidStudioProjects/IPTNews2/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1265625" />
         <entry key="..\:/Users/morei/AndroidStudioProjects/IPTNews2/app/src/main/res/drawable/ic_splash_background.xml" value="0.11302083333333333" />

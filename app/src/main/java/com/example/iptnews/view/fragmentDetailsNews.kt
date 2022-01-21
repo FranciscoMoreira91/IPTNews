@@ -16,6 +16,7 @@ import kotlinx.android.synthetic.main.fragment_details_news.*
 
 class fragmentDetailsNews : Fragment() {
 
+    private var detalhes = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,9 +32,8 @@ class fragmentDetailsNews : Fragment() {
             super.onViewCreated(view, savedInstanceState)
 
 
-            ButtonReturn.setOnClickListener {
-                val action: NavDirections = fragmentDetailsNewsDirections.actionReturnNews()
-                Navigation.findNavController(it).navigate(action)
+            arguments?.let {
+                detalhes = fragmentDetailsNewsArgs.fromBundle(it).detalhes
             }
 
         }

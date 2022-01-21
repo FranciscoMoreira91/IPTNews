@@ -31,6 +31,7 @@
             app:destination="@id/fragmentListNews" />
         <argument
             android:name="detalhes"
-            app:argType="integer" />
+            app:argType="integer"
+            android:defaultValue="0"/>
     </fragment>
 </navigation>
