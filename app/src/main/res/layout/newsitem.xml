@@ -27,5 +27,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Titulo" />
+
+        <TextView
+            android:id="@+id/descr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Descrição" />
+
+        <TextView
+            android:id="@+id/autor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Autor" />
+
+        <TextView
+            android:id="@+id/DataP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Data" />
+
     </LinearLayout>
 </LinearLayout>

@@ -10,7 +10,9 @@ import androidx.navigation.compose.NavHost
 import androidx.recyclerview.widget.RecyclerView
 import com.example.iptnews.R
 import com.example.iptnews.view.model.Noticias
+import kotlinx.android.synthetic.main.fragment_details_news.view.*
 import kotlinx.android.synthetic.main.newsitem.view.*
+import kotlinx.android.synthetic.main.newsitem.view.Titulo
 
 class ItemsAdapter (val newList: ArrayList<Noticias>):RecyclerView.Adapter<ItemsAdapter.NewsViewHolder>() {
 
@@ -37,6 +39,9 @@ class ItemsAdapter (val newList: ArrayList<Noticias>):RecyclerView.Adapter<Items
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
 
         holder.view.Titulo.text = newList[position].titulo
+        holder.view.descr.text = newList[position].descr
+        holder.view.autor.text = newList[position].autor
+        holder.view.DataP.text = newList[position].DataP
         holder.view.setOnClickListener{
             Navigation.findNavController(it).navigate(fragmentListNewsDirections.actionDetailsNews())
         }
