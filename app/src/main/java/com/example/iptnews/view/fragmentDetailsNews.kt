@@ -7,15 +7,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import androidx.navigation.NavDirections
 import androidx.navigation.Navigation
 import com.example.iptnews.R
+import com.example.iptnews.view.viewmodel.DetailViewModel
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.fragment_details_news.*
 
 
 class fragmentDetailsNews : Fragment() {
 
+    private lateinit var viewModel: DetailViewModel
     private var detalhes = 0
 
     override fun onCreateView(
@@ -35,6 +38,16 @@ class fragmentDetailsNews : Fragment() {
             arguments?.let {
                 detalhes = fragmentDetailsNewsArgs.fromBundle(it).detalhes
             }
-
+            observeViewModel()
         }
+
+    private fun observeViewModel () {
+
+        viewModel.newsLiveData.observe(viewLifecycleOwner, Observer { news ->
+            news?.let {
+
+            }
+        })
+
+    }
     }

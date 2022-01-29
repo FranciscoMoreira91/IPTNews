@@ -42,6 +42,14 @@ class fragmentListNews : Fragment(){
 
         }
 
+        refreshLayout.setOnRefreshListener {
+            NewsList.visibility = View.GONE
+            listError.visibility = View.GONE
+            loadingView.visibility = View.VISIBLE
+            viewModel.refresh()
+            refreshLayout.isRefreshing = false
+        }
+
         observeViewModel()
 
     }
@@ -49,7 +57,7 @@ class fragmentListNews : Fragment(){
 
     fun observeViewModel () {
         viewModel.news.observe(viewLifecycleOwner, Observer { news ->
-            newslistadapter?.let {
+            news?.let {
                 NewsList.visibility = View.VISIBLE
                 newslistadapter.updateNewsList(news)
             }
@@ -57,7 +65,10 @@ class fragmentListNews : Fragment(){
 
         viewModel.NewsLoadError.observe(viewLifecycleOwner, Observer { isError ->
             isError?.let {
-                listError.visibility = View.VISIBLE
+                if (it)
+                    listError.visibility = View.VISIBLE
+                else
+                    listError.visibility = View.GONE
             }
         })
 

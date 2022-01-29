@@ -17,7 +17,7 @@
         android:minHeight="200dp"/>
 
     <TextView
-        android:id="@+id/Titulo"
+        android:id="@+id/listTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Titulo"
@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Descrição"
-        android:layout_below="@id/Titulo"
+        android:layout_below="@id/listTitle"
         android:layout_centerHorizontal="true"
         android:layout_margin="4dp"/>
 

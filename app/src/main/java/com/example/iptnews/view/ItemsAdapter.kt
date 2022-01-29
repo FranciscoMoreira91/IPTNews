@@ -1,26 +1,27 @@
 package com.example.iptnews.view
 
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.ListFragment
 import androidx.navigation.Navigation
-import androidx.navigation.compose.NavHost
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.iptnews.R
 import com.example.iptnews.view.model.Noticias
 import kotlinx.android.synthetic.main.fragment_details_news.view.*
 import kotlinx.android.synthetic.main.newsitem.view.*
-import kotlinx.android.synthetic.main.newsitem.view.Titulo
+import kotlinx.android.synthetic.main.newsitem.view.listTitle
+import kotlin.math.log
 
-class ItemsAdapter (val newList: ArrayList<Noticias>):RecyclerView.Adapter<ItemsAdapter.NewsViewHolder>() {
+class ItemsAdapter (val newsList: ArrayList<Noticias>):RecyclerView.Adapter<ItemsAdapter.NewsViewHolder>() {
 
     fun updateNewsList(newNoticiaList: List<Noticias>) {
 
-        newList.clear()
+        newsList.clear()
 
-        newList.addAll(newNoticiaList)
+        newsList.addAll(newNoticiaList)
 
         //Notifies the attached observers that the
         //underlying data has been changed and any View reflecting the data set should refresh itself
@@ -38,17 +39,22 @@ class ItemsAdapter (val newList: ArrayList<Noticias>):RecyclerView.Adapter<Items
 
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
 
-        holder.view.Titulo.text = newList[position].titulo
-        holder.view.descr.text = newList[position].descr
-        holder.view.autor.text = newList[position].autor
-        holder.view.DataP.text = newList[position].DataP
+
+        holder.view.listTitle.text = newsList[position].title
+        holder.view.listDesc.text = newsList[position].description
+        holder.view.listAuthor.text = newsList[position].author
+        holder.view.listPubDate.text = newsList[position].pubDate
+        Glide.with(holder.view.context)
+            .load(newsList[position].enclosure?.link)
+            .into(holder.view.listUrl)
+
         holder.view.setOnClickListener{
             Navigation.findNavController(it).navigate(fragmentListNewsDirections.actionDetailsNews())
         }
 
     }
 
-    override fun getItemCount() = newList.size
+    override fun getItemCount() = newsList.size
 
 
 }

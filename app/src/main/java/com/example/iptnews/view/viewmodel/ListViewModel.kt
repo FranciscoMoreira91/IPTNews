@@ -4,8 +4,17 @@ package com.example.iptnews.view.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.iptnews.view.model.Noticias
+import com.example.iptnews.view.model.NoticiasAPIService
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.observers.DisposableSingleObserver
+import io.reactivex.schedulers.Schedulers
+
 
 class ListViewModel : ViewModel(){
+
+    private val noticiasService = NoticiasAPIService()
+    private val disposable = CompositeDisposable()
 
     val news = MutableLiveData<List<Noticias>>()
     val NewsLoadError = MutableLiveData<Boolean>()
@@ -13,15 +22,35 @@ class ListViewModel : ViewModel(){
 
     fun refresh ()
     {
+        fetchFromRemote()
+    }
 
-        val news1 = Noticias(titulo = "Noticia", autor = "chow chow", descr = "bla bla bla", DataP = "09/09/2022", url = "")
-        val news2 = Noticias(titulo = "Noticia2", autor = "chow 2", descr = "bla bla bla", DataP = "04/09/2022", url = "")
-        val news3 = Noticias(titulo = "Noticia3", autor = "chow 3", descr = "bla bla bla", DataP = "08/09/2022", url = "")
+    private fun fetchFromRemote () {
+        loading.value = true
+        disposable.add (
+            noticiasService.getUltimas()
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeWith(object: DisposableSingleObserver<List<Noticias>>() {
 
-        val newsList = arrayListOf<Noticias>(news1, news2, news3)
+                    override fun onSuccess(noticiasList: List<Noticias>) {
+                        news.value = noticiasList
+                        NewsLoadError.value = false
+                        loading.value = false
+                    }
 
-        news.value = newsList
-        NewsLoadError.value = false
-        loading.value = false
+                    override fun onError(e: Throwable) {
+                        NewsLoadError.value = true
+                        loading.value = false
+                        e.printStackTrace()
+                    }
+
+                })
+        )
+
+    }
+    override fun onCleared() {
+        super.onCleared()
+        disposable.clear()
     }
 }

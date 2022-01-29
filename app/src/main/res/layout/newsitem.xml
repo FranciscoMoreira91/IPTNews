@@ -7,7 +7,7 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/url"
+        android:id="@+id/listUrl"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="2"
@@ -23,25 +23,25 @@
         android:padding="4dp">
 
         <TextView
-            android:id="@+id/Titulo"
+            android:id="@+id/listTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Titulo" />
 
         <TextView
-            android:id="@+id/descr"
+            android:id="@+id/listDesc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Descrição" />
 
         <TextView
-            android:id="@+id/autor"
+            android:id="@+id/listAuthor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Autor" />
 
         <TextView
-            android:id="@+id/DataP"
+            android:id="@+id/listPubDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Data" />
