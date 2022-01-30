@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/news_navigation"
-    app:startDestination="@id/fragmentListNews">
+    app:startDestination="@id/splash_fragment">
     <fragment
         android:id="@+id/fragmentListNews"
-        android:name="com.example.iptnews.view.fragmentListNews"
+        android:name="com.example.iptnews.view.ListNewsFragment"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_list_news">
         <action
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentDetailsNews2"
-        android:name="com.example.iptnews.view.fragmentDetailsNews"
+        android:name="com.example.iptnews.view.DetailsNewsFragment"
         android:label="@string/app_name">
         <action
             android:id="@+id/actionReturnNews"
@@ -26,7 +26,7 @@
     </fragment>
     <fragment
         android:id="@+id/splash_fragment"
-        android:name="com.example.iptnews.view.splash_fragment"
+        android:name="com.example.iptnews.view.SplashFragment"
         android:label="fragment_splash_fragment"
         tools:layout="@layout/fragment_splash_fragment" />
 </navigation>

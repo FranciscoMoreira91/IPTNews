@@ -1,28 +1,21 @@
-package com.example.iptnews.view
+package com.example.iptnews
 
-import android.nfc.Tag
 import android.os.Build
 import android.os.Bundle
 import android.text.Html
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.NavDirections
-import androidx.navigation.Navigation
 import com.bumptech.glide.Glide
-import com.example.iptnews.R
+import com.example.iptnews.view.DetailsNewsFragmentArgs
 import com.example.iptnews.view.model.Noticias
 import com.example.iptnews.view.viewmodel.DetailViewModel
-import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.fragment_details_news.*
-import kotlinx.android.synthetic.main.newsitem.view.*
 
-
-class fragmentDetailsNews : Fragment() {
+class LatestDetailsFragment : Fragment() {
 
     private lateinit var viewModel: DetailViewModel
     private lateinit var detalhes: Noticias
@@ -37,17 +30,17 @@ class fragmentDetailsNews : Fragment() {
 
     }
 
-        override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-            super.onViewCreated(view, savedInstanceState)
-            arguments?.let {
-                detalhes = fragmentDetailsNewsArgs.fromBundle(it).detalhes
-            }
-            viewModel = ViewModelProvider(this).get(DetailViewModel::class.java)
-            viewModel.fetch(detalhes)
-
-
-            observeViewModel()
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        arguments?.let {
+            detalhes = DetailsNewsFragmentArgs.fromBundle(it).detalhes
         }
+        viewModel = ViewModelProvider(this).get(DetailViewModel::class.java)
+        viewModel.fetch(detalhes)
+
+
+        observeViewModel()
+    }
 
     private fun observeViewModel () {
 
@@ -68,4 +61,4 @@ class fragmentDetailsNews : Fragment() {
         })
 
     }
-    }
+}

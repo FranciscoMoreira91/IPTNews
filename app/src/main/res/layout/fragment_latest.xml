@@ -9,42 +9,6 @@
     android:background="@color/white">
 
 
-    <Button
-        android:id="@+id/btn_to_economic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Economia"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/btn_to_sport" />
-
-    <Button
-        android:id="@+id/btn_to_sport"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Desporto"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/btn_to_economic"
-        app:layout_constraintRight_toLeftOf="@id/btn_to_mundo"/>
-
-    <Button
-        android:id="@+id/btn_to_mundo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mundo"
-        app:layout_constraintStart_toEndOf="@id/btn_to_sport"
-        app:layout_constraintEnd_toStartOf="@id/btn_to_politica"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-
-    <Button
-        android:id="@+id/btn_to_politica"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Home"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btn_to_mundo"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/refreshLayout"
         android:layout_width="0dp"
@@ -52,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:context=".view.PoliticaFragment">
+        tools:context=".view.EconomicFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

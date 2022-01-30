@@ -11,20 +11,20 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.iptnews.R
 
 
-class splash_fragment : AppCompatActivity() {
+class SplashFragment : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_list_news)
 
+        setContentView(R.layout.fragment_splash_fragment)
 
         supportActionBar?.hide()
 
         Handler().postDelayed({
-            startActivity(Intent(this, fragmentListNews::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
             finish()
-        }, 3000)
+        }, 4000)
 
 
     }
