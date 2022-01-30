@@ -22,8 +22,7 @@
             app:destination="@id/fragmentListNews" />
         <argument
             android:name="detalhes"
-            android:defaultValue="0"
-            app:argType="integer" />
+            app:argType="com.example.iptnews.view.model.Noticias" />
     </fragment>
     <fragment
         android:id="@+id/splash_fragment"
