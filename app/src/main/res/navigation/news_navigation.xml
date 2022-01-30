@@ -12,6 +12,18 @@
         <action
             android:id="@+id/actionDetailsNews"
             app:destination="@id/fragmentDetailsNews2" />
+        <action
+            android:id="@+id/action_fragmentListNews_to_sportsFragment"
+            app:destination="@id/sportsFragment" />
+        <action
+            android:id="@+id/action_fragmentListNews_to_mundoFragment"
+            app:destination="@id/mundoFragment" />
+        <action
+            android:id="@+id/action_fragmentListNews_to_economicFragment"
+            app:destination="@id/economicFragment" />
+        <action
+            android:id="@+id/action_fragmentListNews_to_politicaFragment"
+            app:destination="@id/politicaFragment" />
     </fragment>
     <fragment
         android:id="@+id/fragmentDetailsNews2"
@@ -30,4 +42,109 @@
         android:name="com.example.iptnews.view.splash_fragment"
         android:label="fragment_splash_fragment"
         tools:layout="@layout/fragment_splash_fragment" />
+    <fragment
+        android:id="@+id/economicFragment"
+        android:name="com.example.iptnews.EconomicFragment"
+        android:label="fragment_economic"
+        tools:layout="@layout/fragment_economic" >
+        <action
+            android:id="@+id/action_economicFragment_to_economicDetailsFragment"
+            app:destination="@id/economicDetailsFragment" />
+        <action
+            android:id="@+id/action_economicFragment_to_politicaFragment"
+            app:destination="@id/politicaFragment" />
+        <action
+            android:id="@+id/action_economicFragment_to_fragmentListNews"
+            app:destination="@id/fragmentListNews" />
+    </fragment>
+    <fragment
+        android:id="@+id/economicDetailsFragment"
+        android:name="com.example.iptnews.EconomicDetailsFragment"
+        android:label="fragment_economic_details"
+        tools:layout="@layout/fragment_economic_details" >
+        <action
+            android:id="@+id/action_economicDetailsFragment_to_economicFragment"
+            app:destination="@id/economicFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mundoFragment"
+        android:name="com.example.iptnews.MundoFragment"
+        android:label="fragment_mundo"
+        tools:layout="@layout/fragment_mundo" >
+        <action
+            android:id="@+id/action_mundoFragment_to_mundoDetailsFragment"
+            app:destination="@id/mundoDetailsFragment" />
+        <action
+            android:id="@+id/action_mundoFragment_to_economicFragment"
+            app:destination="@id/economicFragment" />
+        <action
+            android:id="@+id/action_mundoFragment_to_fragmentListNews"
+            app:destination="@id/fragmentListNews" />
+    </fragment>
+    <fragment
+        android:id="@+id/mundoDetailsFragment"
+        android:name="com.example.iptnews.MundoDetailsFragment"
+        android:label="fragment_mundo_details"
+        tools:layout="@layout/fragment_mundo_details" >
+        <action
+            android:id="@+id/action_mundoDetailsFragment_to_mundoFragment"
+            app:destination="@id/mundoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sportsFragment"
+        android:name="com.example.iptnews.SportsFragment"
+        android:label="fragment_sports"
+        tools:layout="@layout/fragment_sports" >
+        <action
+            android:id="@+id/action_sportsFragment_to_sportsDetailsFragment"
+            app:destination="@id/sportsDetailsFragment" />
+        <action
+            android:id="@+id/action_sportsFragment_to_mundoFragment"
+            app:destination="@id/mundoFragment" />
+        <action
+            android:id="@+id/action_sportsFragment_to_economicFragment"
+            app:destination="@id/economicFragment" />
+        <action
+            android:id="@+id/action_sportsFragment_to_fragmentListNews"
+            app:destination="@id/fragmentListNews" />
+    </fragment>
+    <fragment
+        android:id="@+id/sportsDetailsFragment"
+        android:name="com.example.iptnews.SportsDetailsFragment"
+        android:label="fragment_sports_details"
+        tools:layout="@layout/fragment_sports_details" >
+        <action
+            android:id="@+id/action_sportsDetailsFragment_to_sportsFragment"
+            app:destination="@id/sportsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/politicaFragment"
+        android:name="com.example.iptnews.PoliticaFragment"
+        android:label="fragment_politica"
+        tools:layout="@layout/fragment_politica" >
+        <action
+            android:id="@+id/action_politicaFragment_to_politicaDetailsFragment"
+            app:destination="@id/politicaDetailsFragment" />
+        <action
+            android:id="@+id/action_politicaFragment_to_fragmentListNews"
+            app:destination="@id/fragmentListNews" />
+        <action
+            android:id="@+id/action_politicaFragment_to_economicFragment"
+            app:destination="@id/economicFragment" />
+        <action
+            android:id="@+id/action_politicaFragment_to_mundoFragment"
+            app:destination="@id/mundoFragment" />
+        <action
+            android:id="@+id/action_politicaFragment_to_sportsFragment"
+            app:destination="@id/sportsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/politicaDetailsFragment"
+        android:name="com.example.iptnews.PoliticaDetailsFragment"
+        android:label="fragment_politica_details"
+        tools:layout="@layout/fragment_politica_details" >
+        <action
+            android:id="@+id/action_politicaDetailsFragment_to_politicaFragment"
+            app:destination="@id/politicaFragment" />
+    </fragment>
 </navigation>

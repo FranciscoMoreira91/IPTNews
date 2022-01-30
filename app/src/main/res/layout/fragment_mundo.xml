@@ -31,7 +31,7 @@
         android:id="@+id/btn_to_mundo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mundo"
+        android:text="Home"
         app:layout_constraintStart_toEndOf="@id/btn_to_sport"
         app:layout_constraintEnd_toStartOf="@id/btn_to_politica"
         app:layout_constraintBottom_toBottomOf="parent"/>
@@ -52,7 +52,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:context=".view.fragmentListNews">
+        tools:context=".view.MundoFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
