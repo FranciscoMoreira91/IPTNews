@@ -10,8 +10,9 @@
         android:label="@string/app_name"
         tools:layout="@layout/fragment_list_news">
         <action
-            android:id="@+id/actionDetailsNews"
+            android:id="@+id/actionDetailFragment"
             app:destination="@id/fragmentDetailsNews2" />
+
     </fragment>
     <fragment
         android:id="@+id/fragmentDetailsNews2"
@@ -22,8 +23,7 @@
             app:destination="@id/fragmentListNews" />
         <argument
             android:name="detalhes"
-            android:defaultValue="0"
-            app:argType="integer" />
+            app:argType="com.example.iptnews.view.model.Noticias" />
     </fragment>
     <fragment
         android:id="@+id/splash_fragment"

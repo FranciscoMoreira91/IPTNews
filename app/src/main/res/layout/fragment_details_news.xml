@@ -8,7 +8,7 @@
     tools:context=".view.fragmentDetailsNews">
 
     <ImageView
-        android:id="@+id/image"
+        android:id="@+id/detailsImage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -17,21 +17,39 @@
         android:minHeight="200dp"/>
 
     <TextView
-        android:id="@+id/listTitle"
+        android:id="@+id/detailsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Titulo"
-        android:layout_below="@id/image"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="4dp"/>
+        android:layout_below="@id/detailsImage"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="4dp"
+        android:text="Titulo" />
 
     <TextView
-        android:id="@+id/Descricao"
+        android:id="@+id/detailsPubDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Descrição"
-        android:layout_below="@id/listTitle"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="4dp"/>
+        android:layout_below="@id/detailsTitle"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="4dp"
+        android:text="PubDate" />
+
+    <TextView
+        android:id="@+id/detailsAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detailsTitle"
+        android:layout_marginTop="46dp"
+        android:layout_marginBottom="4dp"
+        android:text="Author" />
+
+    <TextView
+        android:id="@+id/detailsContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detailsTitle"
+        android:layout_marginTop="105dp"
+        android:layout_marginBottom="4dp"
+        android:text="Content" />
 
 </RelativeLayout>
