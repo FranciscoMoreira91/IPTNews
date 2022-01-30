@@ -1,4 +1,4 @@
-package com.example.iptnews.view
+package com.example.iptnews
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,14 +8,12 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.iptnews.R
+import com.example.iptnews.view.ItemsAdapter
 import com.example.iptnews.view.viewmodel.ListViewModel
-import kotlinx.android.synthetic.main.fragment_details_news.*
 import kotlinx.android.synthetic.main.fragment_list_news.*
 
 
-class fragmentListNews : Fragment(){
-
+class LatestFragment : Fragment() {
 
     private lateinit var viewModel: ListViewModel
     private val newslistadapter = ItemsAdapter(arrayListOf())
@@ -82,5 +80,4 @@ class fragmentListNews : Fragment(){
             }
         })
     }
-
 }
