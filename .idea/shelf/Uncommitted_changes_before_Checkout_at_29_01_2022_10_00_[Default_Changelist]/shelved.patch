@@ -1,0 +1,19 @@
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>plugins {\r\n    id 'com.android.application'\r\n    id 'kotlin-android'\r\n    id 'androidx.navigation.safeargs'\r\n    id 'kotlin-android-extensions'\r\n}\r\n\r\nandroid {\r\n    compileSdk 31\r\n\r\n    buildFeatures {\r\n        viewBinding true\r\n    }\r\n\r\n    defaultConfig {\r\n        applicationId \"com.example.iptnews\"\r\n        minSdk 21\r\n        targetSdk 32\r\n        versionCode 1\r\n        versionName \"1.0\"\r\n\r\n        testInstrumentationRunner \"androidx.test.runner.AndroidJUnitRunner\"\r\n    }\r\n\r\n    buildTypes {\r\n        release {\r\n            minifyEnabled false\r\n            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'\r\n        }\r\n    }\r\n    compileOptions {\r\n        sourceCompatibility JavaVersion.VERSION_1_8\r\n        targetCompatibility JavaVersion.VERSION_1_8\r\n    }\r\n    kotlinOptions {\r\n        jvmTarget = '1.8'\r\n    }\r\n}\r\n\r\ndependencies {\r\n\r\n    implementation 'androidx.core:core-ktx:1.7.0'\r\n    implementation 'androidx.appcompat:appcompat:1.4.1'\r\n    implementation 'com.github.bumptech.glide:glide:4.12.0'\r\n    implementation 'com.android.volley:volley:1.2.1'\r\n    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'\r\n    implementation 'com.google.android.material:material:1.4.0'\r\n    implementation 'androidx.constraintlayout:constraintlayout:2.1.2'\r\n    implementation 'androidx.legacy:legacy-support-v4:1.0.0'\r\n    implementation 'de.hdodenhof:circleimageview:3.1.0'\r\n    testImplementation 'junit:junit:4.+'\r\n    androidTestImplementation 'androidx.test.ext:junit:1.1.3'\r\n    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'\r\n\r\n    def nav_version = \"2.3.5\"\r\n\r\n    // Java language implementation\r\n    implementation(\"androidx.navigation:navigation-fragment:$nav_version\")\r\n    implementation(\"androidx.navigation:navigation-ui:$nav_version\")\r\n\r\n    // Kotlin\r\n    implementation(\"androidx.navigation:navigation-fragment-ktx:$nav_version\")\r\n    implementation(\"androidx.navigation:navigation-ui-ktx:$nav_version\")\r\n\r\n    // Feature module Support\r\n    implementation(\"androidx.navigation:navigation-dynamic-features-fragment:$nav_version\")\r\n\r\n    // Testing Navigation\r\n    androidTestImplementation(\"androidx.navigation:navigation-testing:$nav_version\")\r\n\r\n    // Jetpack Compose Integration\r\n    implementation(\"androidx.navigation:navigation-compose:2.4.0-rc01\")\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build.gradle b/app/build.gradle
+--- a/app/build.gradle	
++++ b/app/build.gradle	
+@@ -70,4 +70,7 @@
+ 
+     // Jetpack Compose Integration
+     implementation("androidx.navigation:navigation-compose:2.4.0-rc01")
++
++
++
+ }
+\ No newline at end of file
