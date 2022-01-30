@@ -60,7 +60,7 @@ class ItemsAdapter (val newsList: ArrayList<Noticias>):RecyclerView.Adapter<Item
             .into(holder.view.listUrl)
 
         holder.view.setOnClickListener{
-            Navigation.findNavController(it).navigate(fragmentListNewsDirections.actionDetailFragment(newsList[position]))
+            Navigation.findNavController(it).navigate(fragmentListNewsDirections.actionDetailsNews(newsList[position]))
 
         }
 

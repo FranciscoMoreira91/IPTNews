@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true">
+
+<RelativeLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -23,7 +29,11 @@
         android:layout_below="@id/detailsImage"
         android:layout_marginTop="25dp"
         android:layout_marginBottom="4dp"
-        android:text="Titulo" />
+        android:gravity="center"
+        android:text="Titulo"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/detailsPubDate"
@@ -32,7 +42,10 @@
         android:layout_below="@id/detailsTitle"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="4dp"
-        android:text="PubDate" />
+        android:textSize="16dp"
+        android:text="PubDate"
+        android:gravity="center"
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/detailsAuthor"
@@ -41,15 +54,24 @@
         android:layout_below="@id/detailsTitle"
         android:layout_marginTop="46dp"
         android:layout_marginBottom="4dp"
-        android:text="Author" />
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:text="Author"
+        android:gravity="center"
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/detailsContent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/detailsTitle"
+        android:textColor="@color/black"
+        android:textSize="17dp"
+        android:justificationMode="inter_word"
         android:layout_marginTop="105dp"
         android:layout_marginBottom="4dp"
         android:text="Content" />
 
 </RelativeLayout>
+
+</ScrollView>
