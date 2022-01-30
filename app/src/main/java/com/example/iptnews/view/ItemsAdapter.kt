@@ -1,10 +1,14 @@
 package com.example.iptnews.view
 
 
+import android.content.Intent
+import android.os.Build
+import android.text.Html
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.startActivity
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -16,6 +20,7 @@ import kotlinx.android.synthetic.main.newsitem.view.listTitle
 import kotlin.math.log
 
 class ItemsAdapter (val newsList: ArrayList<Noticias>):RecyclerView.Adapter<ItemsAdapter.NewsViewHolder>() {
+
 
     fun updateNewsList(newNoticiaList: List<Noticias>) {
 
@@ -39,9 +44,15 @@ class ItemsAdapter (val newsList: ArrayList<Noticias>):RecyclerView.Adapter<Item
 
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
 
-
         holder.view.listTitle.text = newsList[position].title
         holder.view.listDesc.text = newsList[position].description
+
+        holder.view.listDesc.text = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            Html.fromHtml(newsList[position].description, Html.FROM_HTML_MODE_COMPACT)
+        } else {
+            Html.fromHtml(newsList[position].description)
+        }
+
         holder.view.listAuthor.text = newsList[position].author
         holder.view.listPubDate.text = newsList[position].pubDate
         Glide.with(holder.view.context)
@@ -49,7 +60,8 @@ class ItemsAdapter (val newsList: ArrayList<Noticias>):RecyclerView.Adapter<Item
             .into(holder.view.listUrl)
 
         holder.view.setOnClickListener{
-            Navigation.findNavController(it).navigate(fragmentListNewsDirections.actionDetailsNews())
+            Navigation.findNavController(it).navigate(fragmentListNewsDirections.actionDetailFragment(newsList[position]))
+
         }
 
     }

@@ -1,6 +1,9 @@
 package com.example.iptnews.view.model
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class Noticias(
     @SerializedName("title")
     val title : String?,
@@ -20,11 +23,12 @@ data class Noticias(
     val enclosure : Enclosure?,
     @SerializedName("categories")
     val categories : List<String>?
-)
+): Parcelable
 
+@Parcelize
 data class Enclosure(
     @SerializedName("link")
     val link : String?,
     @SerializedName("type")
     val type : String?,
-)
+): Parcelable

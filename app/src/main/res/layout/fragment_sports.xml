@@ -22,7 +22,7 @@
         android:id="@+id/btn_to_sport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Desporto"
+        android:text="Home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@id/btn_to_economic"
         app:layout_constraintRight_toLeftOf="@id/btn_to_mundo"/>
@@ -52,7 +52,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:context=".view.fragmentListNews">
+        tools:context=".view.SportsFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

@@ -11,7 +11,7 @@ import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
 
 
-class ListViewModel : ViewModel(){
+class ListViewModel() : ViewModel(){
 
     private val noticiasService = NoticiasAPIService()
     private val disposable = CompositeDisposable()
@@ -21,8 +21,7 @@ class ListViewModel : ViewModel(){
     val loading = MutableLiveData<Boolean>()
 
     fun refresh ()
-    {
-        fetchFromRemote()
+    { fetchFromRemote()
     }
 
     private fun fetchFromRemote () {
@@ -33,8 +32,8 @@ class ListViewModel : ViewModel(){
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(object: DisposableSingleObserver<List<Noticias>>() {
 
-                    override fun onSuccess(noticiasList: List<Noticias>) {
-                        news.value = noticiasList
+                    override fun onSuccess(newsList: List<Noticias>) {
+                        news.value = newsList
                         NewsLoadError.value = false
                         loading.value = false
                     }
@@ -49,8 +48,5 @@ class ListViewModel : ViewModel(){
         )
 
     }
-    override fun onCleared() {
-        super.onCleared()
-        disposable.clear()
-    }
+
 }

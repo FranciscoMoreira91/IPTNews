@@ -3,9 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/bmsff/StudioProjects/IPTNews/app/src/main/res/layout/activity_main.xml" value="0.16979166666666667" />
         <entry key="..\:/Users/bmsff/StudioProjects/IPTNews/app/src/main/res/layout/fragment_details_news.xml" value="0.2552083333333333" />
         <entry key="..\:/Users/bmsff/StudioProjects/IPTNews/app/src/main/res/layout/fragment_list_news.xml" value="0.20208333333333334" />
         <entry key="..\:/Users/bmsff/StudioProjects/IPTNews/app/src/main/res/layout/newsitem.xml" value="0.20208333333333334" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/IPTNews/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/IPTNews/app/src/main/res/layout/fragment_economic.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/IPTNews/app/src/main/res/layout/fragment_list_news.xml" value="0.1" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/IPTNews/app/src/main/res/layout/fragment_mundo.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/IPTNews/app/src/main/res/layout/fragment_splash.xml" value="0.1" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/IPTNews/app/src/main/res/layout/fragment_splash_fragment.xml" value="0.12047101449275362" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/IPTNews/app/src/main/res/layout/fragment_sports.xml" value="0.1" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/IPTNews/app/src/main/res/layout/fragment_sports_details.xml" value="0.12047101449275362" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/IPTNews/app/src/main/res/menu/menu.xml" value="0.10462962962962963" />
         <entry key="..\:/Users/morei/AndroidStudioProjects/IPTNews2/app/src/main/res/drawable/ic_home_background.xml" value="0.2846153846153846" />
         <entry key="..\:/Users/morei/AndroidStudioProjects/IPTNews2/app/src/main/res/drawable/ic_home_foreground.xml" value="0.2846153846153846" />
         <entry key="..\:/Users/morei/AndroidStudioProjects/IPTNews2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1265625" />
