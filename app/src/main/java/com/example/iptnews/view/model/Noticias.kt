@@ -22,7 +22,7 @@ data class Noticias(
     @SerializedName("enclosure")
     val enclosure : Enclosure?,
     @SerializedName("categories")
-    val categories : List<String>?
+    val categories : String?
 ): Parcelable
 
 @Parcelize

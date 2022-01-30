@@ -23,6 +23,8 @@ class MainActivity : AppCompatActivity(){
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        navController = Navigation.findNavController(this, R.id.fragmentContainerView)
+        NavigationUI.setupActionBarWithNavController(this, navController)
         title = "KotlinApp"
         tabLayout = findViewById(R.id.tabLayout)
         viewPager = findViewById(R.id.viewPager)
@@ -44,8 +46,11 @@ class MainActivity : AppCompatActivity(){
             override fun onTabReselected(tab: TabLayout.Tab) {}
         })
 
-    }
 
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        return NavigationUI.navigateUp(navController, null)
+    }
 
 }
 

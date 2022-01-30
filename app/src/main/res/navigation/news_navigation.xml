@@ -3,30 +3,66 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/news_navigation"
-    app:startDestination="@id/splash_fragment">
-    <fragment
-        android:id="@+id/fragmentListNews"
-        android:name="com.example.iptnews.view.ListNewsFragment"
-        android:label="@string/app_name"
-        tools:layout="@layout/fragment_list_news">
-        <action
-            android:id="@+id/actionDetailsNews"
-            app:destination="@id/fragmentDetailsNews2" />
-    </fragment>
+    app:startDestination="@id/latestFragment">
+
     <fragment
         android:id="@+id/fragmentDetailsNews2"
         android:name="com.example.iptnews.view.DetailsNewsFragment"
         android:label="@string/app_name">
-        <action
-            android:id="@+id/actionReturnNews"
-            app:destination="@id/fragmentListNews" />
         <argument
             android:name="detalhes"
             app:argType="com.example.iptnews.view.model.Noticias" />
+        <action
+            android:id="@+id/actionReturnDetails"
+            app:destination="@id/latestFragment" />
     </fragment>
     <fragment
         android:id="@+id/splash_fragment"
         android:name="com.example.iptnews.view.SplashFragment"
         android:label="fragment_splash_fragment"
-        tools:layout="@layout/fragment_splash_fragment" />
+        tools:layout="@layout/fragment_splash_fragment" >
+        <action
+            android:id="@+id/action_splash_fragment_to_latestFragment"
+            app:destination="@id/latestFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/latestFragment"
+        android:name="com.example.iptnews.view.LatestFragment"
+        android:label="LatestFragment" >
+        <action
+            android:id="@+id/actionLatestDetails"
+            app:destination="@id/fragmentDetailsNews2" />
+    </fragment>
+    <fragment
+        android:id="@+id/economyFragment"
+        android:name="com.example.iptnews.view.EconomyFragment"
+        android:label="EconomyFragment" >
+        <action
+            android:id="@+id/actionEconomyDetails"
+            app:destination="@id/fragmentDetailsNews2" />
+    </fragment>
+    <fragment
+        android:id="@+id/politicsFragment"
+        android:name="com.example.iptnews.view.PoliticsFragment"
+        android:label="PoliticsFragment" >
+        <action
+            android:id="@+id/actionPoliticsDetails"
+            app:destination="@id/fragmentDetailsNews2" />
+    </fragment>
+    <fragment
+        android:id="@+id/sportsFragment"
+        android:name="com.example.iptnews.view.SportsFragment"
+        android:label="SportsFragment" >
+        <action
+            android:id="@+id/actionSportsDetails"
+            app:destination="@id/fragmentDetailsNews2" />
+    </fragment>
+    <fragment
+        android:id="@+id/worldFragment"
+        android:name="com.example.iptnews.view.WorldFragment"
+        android:label="WorldFragment" >
+        <action
+            android:id="@+id/actionWorldtDetails"
+            app:destination="@id/fragmentDetailsNews2" />
+    </fragment>
 </navigation>

@@ -4,7 +4,8 @@ import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.example.iptnews.LatestFragment
+import com.example.iptnews.view.*
+
 
 internal class MyAdapter(
     var context: Context,
@@ -18,16 +19,16 @@ internal class MyAdapter(
                 LatestFragment()
             }
             1 -> {
-                LatestFragment()
+                WorldFragment()
             }
             2 -> {
-                LatestFragment()
+                SportsFragment()
             }
             3 -> {
-                LatestFragment()
+                EconomyFragment()
             }
             4 -> {
-                LatestFragment()
+                PoliticsFragment()
             }
             else -> getItem(position)
         }

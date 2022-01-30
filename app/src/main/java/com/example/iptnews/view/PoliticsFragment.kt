@@ -7,19 +7,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.Navigation
-import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.iptnews.R
-import com.example.iptnews.view.viewmodel.LatestModel
+import com.example.iptnews.view.viewmodel.PoliticsModel
 import kotlinx.android.synthetic.main.fragment_details_news.*
 import kotlinx.android.synthetic.main.fragment_list_news.*
 
 
-class ListNewsFragment : Fragment(){
+class PoliticsFragment : Fragment(){
 
 
-    private lateinit var viewModel: LatestModel
+    private lateinit var viewModel: PoliticsModel
     private val newslistadapter = ItemsAdapter(arrayListOf())
 
     override fun onCreateView(
@@ -34,7 +32,7 @@ class ListNewsFragment : Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = ViewModelProvider(this).get(LatestModel::class.java)
+        viewModel = ViewModelProvider(this).get(PoliticsModel::class.java)
         viewModel.refresh()
 
         NewsList.apply {

@@ -24,7 +24,7 @@ class SplashFragment : AppCompatActivity() {
         Handler().postDelayed({
             startActivity(Intent(this, MainActivity::class.java))
             finish()
-        }, 4000)
+        }, 1000)
 
 
     }

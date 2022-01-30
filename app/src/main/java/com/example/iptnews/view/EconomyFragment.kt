@@ -1,4 +1,4 @@
-package com.example.iptnews
+package com.example.iptnews.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,14 +8,16 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.iptnews.view.ItemsAdapter
-import com.example.iptnews.view.viewmodel.ListViewModel
+import com.example.iptnews.R
+import com.example.iptnews.view.viewmodel.EconomyModel
+import kotlinx.android.synthetic.main.fragment_details_news.*
 import kotlinx.android.synthetic.main.fragment_list_news.*
 
 
-class LatestFragment : Fragment() {
+class EconomyFragment : Fragment(){
 
-    private lateinit var viewModel: ListViewModel
+
+    private lateinit var viewModel: EconomyModel
     private val newslistadapter = ItemsAdapter(arrayListOf())
 
     override fun onCreateView(
@@ -24,14 +26,13 @@ class LatestFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_list_news, container, false)
-
     }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel = ViewModelProvider(this).get(ListViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(EconomyModel::class.java)
         viewModel.refresh()
 
         NewsList.apply {
@@ -80,4 +81,5 @@ class LatestFragment : Fragment() {
             }
         })
     }
+
 }

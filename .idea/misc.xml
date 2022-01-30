@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/bmsff/StudioProjects/IPTNews/app/src/main/res/drawable/ic_home_background.xml" value="0.1755" />
+        <entry key="..\:/Users/bmsff/StudioProjects/IPTNews/app/src/main/res/drawable/ic_home_foreground.xml" value="0.1755" />
+        <entry key="..\:/Users/bmsff/StudioProjects/IPTNews/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1755" />
+        <entry key="..\:/Users/bmsff/StudioProjects/IPTNews/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1755" />
+        <entry key="..\:/Users/bmsff/StudioProjects/IPTNews/app/src/main/res/drawable/ic_splash_background.xml" value="0.1755" />
+        <entry key="..\:/Users/bmsff/StudioProjects/IPTNews/app/src/main/res/drawable/ic_splash_foreground.xml" value="0.1755" />
+        <entry key="..\:/Users/bmsff/StudioProjects/IPTNews/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/bmsff/StudioProjects/IPTNews/app/src/main/res/layout/fragment_details_news.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/bmsff/StudioProjects/IPTNews/app/src/main/res/layout/fragment_latest.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/bmsff/StudioProjects/IPTNews/app/src/main/res/layout/fragment_list_news.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/bmsff/StudioProjects/IPTNews/app/src/main/res/layout/fragment_splash_fragment.xml" value="0.3875" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK" />
+</project>

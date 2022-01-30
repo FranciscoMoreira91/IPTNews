@@ -4,18 +4,18 @@ import io.reactivex.Single
 import retrofit2.http.GET
 
 interface NoticiasAPI {
-    @GET("/b/PRDH")
+    @GET("/b/XIU5")
     fun getUltimas(): Single<List<Noticias>>
 
-    @GET("desporto")
+    @GET("/b/34AA")
     fun getDesporto(): Single<List<Noticias>>
 
-    @GET("economia")
+    @GET("/b/FIC9")
     fun getEconomia(): Single<List<Noticias>>
 
-    @GET("politica")
+    @GET("/b/XWNW")
     fun getPolitica(): Single<List<Noticias>>
 
-    @GET("mundo")
+    @GET("/b/NAF4")
     fun getMundo(): Single<List<Noticias>>
 }

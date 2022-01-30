@@ -11,7 +11,7 @@ import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
 
 
-class ListViewModel() : ViewModel(){
+class EconomyModel() : ViewModel(){
 
     private val noticiasService = NoticiasAPIService()
     private val disposable = CompositeDisposable()
@@ -27,7 +27,7 @@ class ListViewModel() : ViewModel(){
     private fun fetchFromRemote () {
         loading.value = true
         disposable.add (
-            noticiasService.getUltimas()
+            noticiasService.getEconomia()
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(object: DisposableSingleObserver<List<Noticias>>() {
