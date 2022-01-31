@@ -41,12 +41,12 @@ class WorldFragment : Fragment(){
 
         }
 
-        refreshLayout.setOnRefreshListener {
+        refreshlayout.setOnRefreshListener {
             NewsList.visibility = View.GONE
             listError.visibility = View.GONE
             loadingView.visibility = View.VISIBLE
             viewModel.refresh()
-            refreshLayout.isRefreshing = false
+            refreshlayout.isRefreshing = false
         }
 
         observeViewModel()

@@ -93,7 +93,7 @@
             tools:ignore="MissingConstraints" />
 
             <TextView
-                android:id="@+id/texterror"
+                android:id="@+id/listError"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Erro"
