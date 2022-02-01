@@ -4,6 +4,7 @@ package com.example.iptnews.view
 import MyAdapter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.SearchView
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
@@ -14,14 +15,19 @@ import androidx.viewpager.widget.ViewPager
 import com.example.iptnews.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.tabs.TabLayout
-
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity(){
 
     lateinit var tabLayout: TabLayout
     lateinit var viewPager: ViewPager
-    private lateinit var navController : NavController
+
+
+    companion object{
+        lateinit var navController : NavController
+        var SEARCH_QUERY : String = ""
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -34,13 +40,23 @@ class MainActivity : AppCompatActivity(){
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigatin_view)
         bottomNavigationView.setupWithNavController(navController)
 
-
-
+        var searchView: SearchView = findViewById(R.id.search)
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                SEARCH_QUERY = query
+                return false
+            }
+            override fun onQueryTextChange(newText: String): Boolean {
+                SEARCH_QUERY = newText
+                return false
+            }
+        })
     }
     override fun onSupportNavigateUp(): Boolean {
         return NavigationUI.navigateUp(navController, null)
 
     }
+
 
 }
 

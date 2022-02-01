@@ -19,6 +19,7 @@ import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.iptnews.R
+import com.example.iptnews.view.MainActivity.Companion.SEARCH_QUERY
 import com.example.iptnews.view.model.Noticias
 import com.google.android.play.core.internal.v
 import kotlinx.android.synthetic.main.fragment_details_news.view.*
@@ -35,8 +36,15 @@ class ItemsAdapter (val newsList: ArrayList<Noticias>):RecyclerView.Adapter<Item
     fun updateNewsList(newNoticiaList: List<Noticias>) {
 
         newsList.clear()
-
-        newsList.addAll(newNoticiaList)
+        if(!SEARCH_QUERY.isNullOrEmpty()){
+            for (element in newNoticiaList){
+                if (element.title.toString().contains(SEARCH_QUERY,ignoreCase = true)){
+                    newsList?.add(element)
+                }
+            }
+        }else{
+            newsList?.addAll(newNoticiaList)
+        }
 
         //Notifies the attached observers that the
         //underlying data has been changed and any View reflecting the data set should refresh itself
@@ -72,14 +80,16 @@ class ItemsAdapter (val newsList: ArrayList<Noticias>):RecyclerView.Adapter<Item
             .load(newsList[position].enclosure?.link)
             .into(holder.view.listUrl)
 
-
-
-        //holder.view.Titulo.text = newsList[position].title
         holder.view.setOnClickListener{
 
             //Navigation.findNavController(it).navigate(LatestFragmentDirections())
-            Navigation.findNavController(it).navigate(LatestFragmentDirections.actionLatestDetails(newsList[position]))
-
+            when (newsList[position].categories){
+                "Política" -> Navigation.findNavController(it).navigate(PoliticsFragmentDirections.actionPoliticsDetails(newsList[position]))
+                "Ultimas" -> Navigation.findNavController(it).navigate(LatestFragmentDirections.actionLatestDetails(newsList[position]))
+                "Mundo" -> Navigation.findNavController(it).navigate(WorldFragmentDirections.actionWorldtDetails(newsList[position]))
+                "Economia" -> Navigation.findNavController(it).navigate(EconomyFragmentDirections.actionEconomyDetails(newsList[position]))
+                "Desporto" -> Navigation.findNavController(it).navigate(SportsFragmentDirections.actionSportsDetails(newsList[position]))
+            }
 
         }
 
