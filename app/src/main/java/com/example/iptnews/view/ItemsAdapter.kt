@@ -81,6 +81,7 @@ class ItemsAdapter (val newsList: ArrayList<Noticias>):RecyclerView.Adapter<Item
             Navigation.findNavController(it).navigate(LatestFragmentDirections.actionLatestDetails(newsList[position]))
 
 
+
         }
 
 
