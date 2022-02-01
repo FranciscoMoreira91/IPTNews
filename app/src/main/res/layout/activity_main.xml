@@ -6,18 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".view.MainActivity">
 
+
     <fragment
         android:id="@+id/fragmentContainerView"
         android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="408dp"
-        android:layout_height="562dp"
+        android:layout_width="413dp"
+        android:layout_height="648dp"
         app:defaultNavHost="true"
         app:layout_constraintBottom_toTopOf="@id/bottom_navigatin_view"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         app:navGraph="@navigation/news_navigation" />
-
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigatin_view"
@@ -31,7 +33,13 @@
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/menu"/>
 
-
+    <SearchView
+        android:id="@+id/search"
+        android:layout_width="409dp"
+        android:layout_height="55dp"
+        android:background="#1db995"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

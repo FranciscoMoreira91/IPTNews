@@ -9,23 +9,14 @@
     android:background="@color/white">
 
 
-    <SearchView
-        android:id="@+id/search"
-        android:layout_width="415dp"
-        android:layout_height="53dp"
-        android:queryHint="Pesquisa"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-5dp"
-        tools:layout_editor_absoluteY="1dp" />
-
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/refreshlayout"
-        android:layout_width="381dp"
-        android:layout_height="635dp"
+        android:layout_width="382dp"
+        android:layout_height="710dp"
         tools:context=".view.fragmentListNews"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="-5dp"
-        tools:layout_editor_absoluteY="61dp">
+        tools:layout_editor_absoluteY="-14dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -33,8 +24,10 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/NewsList"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_width="376dp"
+                android:layout_height="773dp"
+                tools:layout_editor_absoluteX="5dp"
+                tools:layout_editor_absoluteY="-66dp" />
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/image"

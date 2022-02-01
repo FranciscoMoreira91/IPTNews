@@ -77,8 +77,7 @@
     <fragment
         android:id="@+id/splashFragment"
         android:name="com.example.iptnews.view.SplashFragment"
-        android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash" >
+        tools:layout="@layout/fragment_splash">
         <action
             android:id="@+id/actionSplashScreen"
             app:destination="@id/latestFragment" />
