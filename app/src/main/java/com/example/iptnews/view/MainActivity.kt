@@ -36,29 +36,6 @@ class MainActivity : AppCompatActivity(){
 
 
 
-/*
-        title = "KotlinApp"
-        tabLayout = findViewById(R.id.tabLayout)
-        viewPager = findViewById(R.id.viewPager)
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_fire))
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_worldmap))
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_soccerball))
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_economy))
-        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_politicalscience))
-        tabLayout.tabGravity = TabLayout.GRAVITY_FILL
-        val adapter = MyAdapter(this, supportFragmentManager,
-                tabLayout.tabCount)
-        viewPager.adapter = adapter
-        viewPager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabLayout))
-        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-            override fun onTabSelected(tab: TabLayout.Tab) {
-                viewPager.currentItem = tab.position
-            }
-            override fun onTabUnselected(tab: TabLayout.Tab) {}
-            override fun onTabReselected(tab: TabLayout.Tab) {}
-        })
-
-*/
     }
     override fun onSupportNavigateUp(): Boolean {
         return NavigationUI.navigateUp(navController, null)
