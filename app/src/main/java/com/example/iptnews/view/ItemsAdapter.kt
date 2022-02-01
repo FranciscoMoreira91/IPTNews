@@ -91,6 +91,7 @@ class ItemsAdapter (val newsList: ArrayList<Noticias>):RecyclerView.Adapter<Item
                 "Desporto" -> Navigation.findNavController(it).navigate(SportsFragmentDirections.actionSportsDetails(newsList[position]))
             }
 
+
         }
 
 
