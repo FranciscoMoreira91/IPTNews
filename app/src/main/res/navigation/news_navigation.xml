@@ -14,29 +14,40 @@
             app:argType="com.example.iptnews.view.model.Noticias" />
         <action
             android:id="@+id/actionReturnDetails"
-            app:destination="@id/latestFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/splash_fragment"
-        android:name="com.example.iptnews.view.SplashFragment"
-        android:label="fragment_splash_fragment"
-        tools:layout="@layout/fragment_splash_fragment" >
+            app:destination="@id/latestFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
         <action
-            android:id="@+id/action_splash_fragment_to_latestFragment"
-            app:destination="@id/latestFragment" />
+            android:id="@+id/actionReturnEconomy"
+            app:destination="@id/economyFragment" />
+        <action
+            android:id="@+id/actionReturnpolitic"
+            app:destination="@id/politicsFragment" />
+        <action
+            android:id="@+id/actionReturnsport"
+            app:destination="@id/sportsFragment" />
+        <action
+            android:id="@+id/actionReturnworld"
+            app:destination="@id/worldFragment" />
     </fragment>
     <fragment
         android:id="@+id/latestFragment"
         android:name="com.example.iptnews.view.LatestFragment"
-        android:label="LatestFragment" >
+        android:label="@string/app_name">
         <action
             android:id="@+id/actionLatestDetails"
-            app:destination="@id/fragmentDetailsNews2" />
+            app:destination="@id/fragmentDetailsNews2"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/economyFragment"
         android:name="com.example.iptnews.view.EconomyFragment"
-        android:label="EconomyFragment" >
+        android:label="@string/app_name">
         <action
             android:id="@+id/actionEconomyDetails"
             app:destination="@id/fragmentDetailsNews2" />
@@ -44,7 +55,7 @@
     <fragment
         android:id="@+id/politicsFragment"
         android:name="com.example.iptnews.view.PoliticsFragment"
-        android:label="PoliticsFragment" >
+        android:label="@string/app_name">
         <action
             android:id="@+id/actionPoliticsDetails"
             app:destination="@id/fragmentDetailsNews2" />
@@ -52,7 +63,7 @@
     <fragment
         android:id="@+id/sportsFragment"
         android:name="com.example.iptnews.view.SportsFragment"
-        android:label="SportsFragment" >
+        android:label="@string/app_name">
         <action
             android:id="@+id/actionSportsDetails"
             app:destination="@id/fragmentDetailsNews2" />
@@ -60,7 +71,7 @@
     <fragment
         android:id="@+id/worldFragment"
         android:name="com.example.iptnews.view.WorldFragment"
-        android:label="WorldFragment" >
+        android:label="@string/app_name">
         <action
             android:id="@+id/actionWorldtDetails"
             app:destination="@id/fragmentDetailsNews2" />

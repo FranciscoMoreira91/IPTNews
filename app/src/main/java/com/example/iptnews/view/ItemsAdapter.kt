@@ -1,6 +1,7 @@
 package com.example.iptnews.view
 
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Build
 import android.text.Html
@@ -8,20 +9,27 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat.startActivity
 import androidx.fragment.app.ListFragment
+import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.iptnews.R
 import com.example.iptnews.view.model.Noticias
+import com.google.android.play.core.internal.v
 import kotlinx.android.synthetic.main.fragment_details_news.view.*
+import kotlinx.android.synthetic.main.fragment_list_news.view.*
 import kotlinx.android.synthetic.main.newsitem.view.*
 import kotlinx.android.synthetic.main.newsitem.view.listTitle
 import kotlin.math.log
 
 class ItemsAdapter (val newsList: ArrayList<Noticias>):RecyclerView.Adapter<ItemsAdapter.NewsViewHolder>() {
+
+    private lateinit var navController : NavController
 
 
     fun updateNewsList(newNoticiaList: List<Noticias>) {
@@ -64,13 +72,22 @@ class ItemsAdapter (val newsList: ArrayList<Noticias>):RecyclerView.Adapter<Item
             .load(newsList[position].enclosure?.link)
             .into(holder.view.listUrl)
 
+
+
+        //holder.view.Titulo.text = newsList[position].title
         holder.view.setOnClickListener{
+
+            //Navigation.findNavController(it).navigate(LatestFragmentDirections())
             Navigation.findNavController(it).navigate(LatestFragmentDirections.actionLatestDetails(newsList[position]))
+
+
         }
+
 
     }
 
     override fun getItemCount() = newsList.size
+
 
 
 }

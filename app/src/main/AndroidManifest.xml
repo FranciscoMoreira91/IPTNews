@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         >
-        <activity android:name=".view.SplashFragment"
+        <activity android:name=".view.MainActivity"
             android:theme="@style/Theme.AppCompat.Light"
             android:exported="true">
 
@@ -21,9 +21,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.MainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.IPTNews"/>
 
     </application>
 

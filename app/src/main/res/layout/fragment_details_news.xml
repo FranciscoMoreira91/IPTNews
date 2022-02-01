@@ -1,55 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.DetailsNewsFragment">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true">
 
-    <ImageView
-        android:id="@+id/detailsImage"
+    <RelativeLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:src="@mipmap/ic_launcher"
-        android:scaleType="fitCenter"
-        android:minHeight="200dp"/>
+        android:layout_height="match_parent"
+        tools:context=".view.DetailsNewsFragment">
 
-    <TextView
-        android:id="@+id/detailsTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/detailsImage"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="4dp"
-        android:text="Titulo" />
 
-    <TextView
-        android:id="@+id/detailsPubDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/detailsTitle"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="4dp"
-        android:text="PubDate" />
+        <ImageView
+            android:id="@+id/detailsImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:src="@mipmap/ic_launcher"
+            android:scaleType="fitCenter"
+            android:minHeight="200dp"/>
 
-    <TextView
-        android:id="@+id/detailsAuthor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/detailsTitle"
-        android:layout_marginTop="46dp"
-        android:layout_marginBottom="4dp"
-        android:text="Author" />
+        <TextView
+            android:id="@+id/detailsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/detailsImage"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="4dp"
+            android:gravity="center"
+            android:text="Titulo"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/detailsContent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/detailsTitle"
-        android:layout_marginTop="105dp"
-        android:layout_marginBottom="4dp"
-        android:text="Content" />
+        <TextView
+            android:id="@+id/detailsPubDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/detailsTitle"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="4dp"
+            android:textSize="16dp"
+            android:text="PubDate"
+            android:gravity="center"
+            android:textColor="@color/black" />
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/detailsAuthor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/detailsTitle"
+            android:layout_marginTop="46dp"
+            android:layout_marginBottom="4dp"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:text="Author"
+            android:gravity="center"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/detailsContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/detailsTitle"
+            android:textColor="@color/black"
+            android:textSize="17dp"
+            android:justificationMode="inter_word"
+            android:layout_marginTop="105dp"
+            android:layout_marginBottom="4dp"
+            android:text="Content" />
+
+    </RelativeLayout>
+
+</ScrollView>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item
-        android:id="@+id/searchView"
-        android:title="Search View"
-        android:icon="@android:drawable/ic_menu_search"
-        app:showAsAction="always"
-        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+
+    <item android:title="Ultimas" android:icon="@drawable/ic_fire" android:id="@+id/latestFragment" />
+    <item android:title="Mundo" android:icon="@drawable/ic_worldmap" android:id="@+id/worldFragment" />
+    <item android:title="Desporto" android:icon="@drawable/ic_soccerball" android:id="@+id/sportsFragment" />
+    <item android:title="Economia" android:icon="@drawable/ic_economy" android:id="@+id/economyFragment" />
+    <item android:title="Politica" android:icon="@drawable/ic_politicalscience" android:id="@+id/politicsFragment" />
 
 
 </menu>

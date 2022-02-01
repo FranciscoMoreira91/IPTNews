@@ -5,9 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.manager.SupportRequestManagerFragment
 import com.example.iptnews.R
 import com.example.iptnews.view.viewmodel.LatestModel
 import kotlinx.android.synthetic.main.fragment_details_news.*
@@ -38,6 +40,7 @@ class LatestFragment : Fragment(){
         NewsList.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = newslistadapter
+
 
         }
 

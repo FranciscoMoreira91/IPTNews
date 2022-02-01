@@ -3,25 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Viribus/AndroidStudioProjects/IPTNews/app/src/main/res/layout/activity_main.xml" value="0.28940217391304346" />
-        <entry key="..\:/Users/bmsff/StudioProjects/IPTNews/app/src/main/res/layout/activity_main.xml" value="0.2015625" />
-        <entry key="..\:/Users/bmsff/StudioProjects/IPTNews/app/src/main/res/layout/fragment_list_news.xml" value="0.2015625" />
-        <entry key="..\:/Users/bmsff/StudioProjects/IPTNews/app/src/main/res/layout/fragment_splash_fragment.xml" value="0.2015625" />
-        <entry key="..\:/Users/morei/AndroidStudioProjects/IPTNews2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1265625" />
-        <entry key="..\:/Users/morei/AndroidStudioProjects/IPTNews2/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1265625" />
-        <entry key="..\:/Users/morei/AndroidStudioProjects/IPTNews2/app/src/main/res/drawable/ic_splash_background.xml" value="0.11302083333333333" />
-        <entry key="..\:/Users/morei/AndroidStudioProjects/IPTNews2/app/src/main/res/drawable/ic_splash_foreground.xml" value="0.11302083333333333" />
-        <entry key="..\:/Users/morei/AndroidStudioProjects/IPTNews2/app/src/main/res/layout/activity_image_detail.xml" value="0.1" />
-        <entry key="..\:/Users/morei/AndroidStudioProjects/IPTNews2/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/morei/AndroidStudioProjects/IPTNews2/app/src/main/res/layout/fragment_details_news.xml" value="0.18" />
-        <entry key="..\:/Users/morei/AndroidStudioProjects/IPTNews2/app/src/main/res/layout/fragment_list_news.xml" value="0.25" />
-        <entry key="..\:/Users/morei/AndroidStudioProjects/IPTNews2/app/src/main/res/layout/fragment_splash.xml" value="0.21" />
-        <entry key="..\:/Users/morei/AndroidStudioProjects/IPTNews2/app/src/main/res/layout/newsitem.xml" value="0.16354166666666667" />
-        <entry key="..\:/Users/morei/AndroidStudioProjects/IPTNews2/app/src/main/res/menu/menu.xml" value="0.21" />
-        <entry key="..\:/Users/morei/AndroidStudioProjects/IPTNews2/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1265625" />
-        <entry key="..\:/Users/morei/AndroidStudioProjects/IPTNews2/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1265625" />
-        <entry key="..\:/Users/morei/AndroidStudioProjects/IPTNews2/app/src/main/res/mipmap-anydpi-v26/ic_splash.xml" value="0.11302083333333333" />
-        <entry key="..\:/Users/morei/AndroidStudioProjects/IPTNews2/app/src/main/res/mipmap-anydpi-v26/ic_splash_round.xml" value="0.11302083333333333" />
+        <entry key="..\:/Users/morei/AndroidStudioProjects/IPTNews3/app/src/main/res/layout/activity_main.xml" value="0.14" />
+        <entry key="..\:/Users/morei/AndroidStudioProjects/IPTNews3/app/src/main/res/layout/fragment_details_news.xml" value="0.17" />
+        <entry key="..\:/Users/morei/AndroidStudioProjects/IPTNews3/app/src/main/res/layout/fragment_latest.xml" value="0.11354166666666667" />
+        <entry key="..\:/Users/morei/AndroidStudioProjects/IPTNews3/app/src/main/res/layout/fragment_list_news.xml" value="0.1" />
+        <entry key="..\:/Users/morei/AndroidStudioProjects/IPTNews3/app/src/main/res/layout/fragment_splash_fragment.xml" value="0.1" />
+        <entry key="..\:/Users/morei/AndroidStudioProjects/IPTNews3/app/src/main/res/layout/newsitem.xml" value="0.22" />
+        <entry key="..\:/Users/morei/AndroidStudioProjects/IPTNews3/app/src/main/res/layout/search_item.xml" value="0.22" />
+        <entry key="..\:/Users/morei/AndroidStudioProjects/IPTNews3/app/src/main/res/menu/menu.xml" value="0.1" />
+        <entry key="..\:/Users/morei/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/activity_list_item.xml" value="0.1693840579710145" />
+        <entry key="..\:/Users/morei/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_list_item_1.xml" value="0.1693840579710145" />
       </map>
     </option>
   </component>
